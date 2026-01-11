@@ -182,12 +182,12 @@ export function HeroSlider() {
       </div>
 
       {/* Bottom Title Bar */}
-      <div className="bg-white border-t border-gray-200 px-4 md:px-8 py-4 flex items-center justify-between">
+      <div className="bg-[#711610] border-t border-gray-200 px-4 md:px-8 py-4 flex items-center justify-between">
         <div>
-          <h3 className="text-gray-900 font-bold text-lg md:text-xl">
+          <h3 className="text-white font-bold text-lg md:text-xl">
             {slide.title} {slide.subtitle} 2026
           </h3>
-          <p className="text-gray-600 text-sm">{slide.location}</p>
+          <p className="text-white text-sm">{slide.location}</p>
         </div>
 
         {/* Pagination Dots */}

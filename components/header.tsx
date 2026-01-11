@@ -51,7 +51,7 @@ export function Header() {
             </Link>
             <Link
               href="#"
-              className="bg-[#007b3e] text-white px-4 py-2 text-sm font-semibold hover:bg-[#006633] transition-colors"
+              className="bg-[#DECA87] text-white px-4 py-2 text-sm font-semibold hover:bg-[#e6d9aa] transition-colors"
             >
               INTRANET
             </Link>
@@ -65,12 +65,12 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="flex items-end">
-              <Image src={UNILogo} alt="UNI Logo" width={50} height={50} />
-              <div className="w-2 h-2 bg-[#007b3e] mb-2 ml-0.5" />
+              <Image src={UNILogo} alt="UNI Logo" width={100} height={100} />
+              
             </div>
-            <div className="ml-2 flex flex-col text-gray-900 text-sm leading-tight">
-              <div>Facultad</div>
-              <div>de Ingenieria Industrial, de Sistemas e Informática</div>
+            <div className="ml-2 flex flex-col text-gray-900 text-xl leading-tight">
+              <h4 className="font-bold">Facultad</h4>
+              <h4 className="font-bold">de Ingenieria Industrial, de Sistemas e Informática</h4>
             </div>
           </div>
 
@@ -91,14 +91,14 @@ export function Header() {
       </div>
 
       {/* Navigation */}
-      <nav className="bg-[#4a4a4a]">
+      <nav className="bg-[#711610]">
         <div className="max-w-7xl mx-auto px-4">
           <ul className="flex items-center justify-center">
             {navItems.map((item) => (
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="block px-6 py-4 text-white text-sm font-medium hover:bg-[#3a3a3a] transition-colors"
+                  className="block px-6 py-4 text-white text-sm font-medium hover:bg-[#B32117] transition-colors"
                 >
                   {item.label}
                 </Link>
