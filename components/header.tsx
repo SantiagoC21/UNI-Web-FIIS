@@ -7,12 +7,14 @@ import Image from "next/image"
 import UNILogo from "@/static/UniLogo.png"
 
 const navItems = [
-  { label: "La Universidad", href: "#" },
-  { label: "Estudios", href: "#" },
+  { label: "FIIS", href: "/descripcion" },
+  { label: "Areas", href: "/areas" },
+  { label: "Nacional", href: "https://www.sunedu.gob.pe/universidades-publicas/" },
   { label: "Internacional", href: "https://www.hotcourseslatinoamerica.com/study/rankings/the-world-university.html" },
   { label: "Investigación y Transferencia", href: "https://www.facebook.com/Instituto.De.Investigacion.FIIS" },
-  { label: "Cultura y Deporte", href: "#" },
-  { label: "Centros", href: "#" },
+  { label: "Postgrado", href: "#" },
+  { label: "Computo", href: "#" },
+  { label: "Proyeccion Social", href: "#" },
 ]
 
 export function Header() {
@@ -61,17 +63,18 @@ export function Header() {
 
       {/* Main Header */}
       <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
             <div className="flex items-end">
-              <Image src={UNILogo} alt="UNI Logo" width={100} height={100} />
+              <Image src={UNILogo} alt="UNI Logo" width={70} height={70} />
               
             </div>
             <div className="ml-2 flex flex-col text-gray-900 text-xl leading-tight">
-              <h4 className="font-bold">Facultad de Ingenieria Industrial y de Sistemas - UNI</h4>
+              <h1 className="font-bold text-[#711610]">UNIVERSIDAD NACIONAL DE INGENIERIA</h1>
+              <h4 className="font-bold">Facultad de Ingenieria Industrial, de Sistemas y de Software</h4>
             </div>
-          </div>
+          </Link>
 
           {/* Search */}
           <div className="flex items-center">

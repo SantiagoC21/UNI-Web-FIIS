@@ -56,7 +56,7 @@ const footerColumns = [
       { label: "Agenda FIIS", href: "#" },
       { label: "Agenda del Rector", href: "#" },
       { label: "Diario Digital", href: "#" },
-      { label: "UniRadio Jaén", href: "#" },
+      { label: "UniRadio", href: "#" },
       { label: "FIIS TV", href: "#" },
       { label: "Galería de Fotos", href: "#" },
       { label: "Divulgación Científica", href: "#" },
@@ -153,20 +153,33 @@ export function Footer() {
               <div className="text-sm text-gray-600 leading-relaxed">
               <p>Av. Tupac Amaru 280, Lima 15333</p>
               <p>
-                Teléfono:{" "}
-                <Link href="tel:+34953212121" className="text-[#007b3e] hover:underline">
-                  +34 953 212121
+                📞:{" "}
+                <Link href="tel:+51(01) 4811424" className="text-[#007b3e] hover:underline">
+                  +51 (01) 4811424
                 </Link>
               </p>
               <p>
-                Fax:{" "}
-                <Link href="tel:+34953212121" className="text-[#007b3e] hover:underline">
-                  +34 953 212121
+                📠:{" "}
+                <Link href="tel:+51(01) 4811424" className="text-[#007b3e] hover:underline">
+                  +51 (01) 4811424
                 </Link>
               </p>
               <p>
-                <Link href="mailto:acreditacionfiis@uni.edu.pe" className="text-[#007b3e] hover:underline">
-                  acreditacionfiis@uni.edu.pe
+                📧:
+                <Link href="mailto:fiis@uni.edu.pe" className="text-[#007b3e] hover:underline">
+                  fiis@uni.edu.pe
+                </Link>
+              </p>
+              <p>
+                🌐:
+                <Link href="https://fiis.uni.edu.pe" className="text-[#007b3e] hover:underline">
+                  fiis.uni.edu.pe
+                </Link>
+              </p>
+              <p>
+                ⭐:
+                <Link href="https://www.facebook.com/fiisunioficial/reviews" className="text-[#007b3e] hover:underline">
+                  calificar
                 </Link>
               </p>
             </div>
