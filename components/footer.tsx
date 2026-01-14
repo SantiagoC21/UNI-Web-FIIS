@@ -1,9 +1,11 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Youtube, Facebook, Linkedin, Instagram } from "lucide-react"
+import UniLogo from "@/static/UniLogo.png"
 
 const footerColumns = [
   {
-    title: "UJA",
+    title: "FIIS",
     links: [
       { label: "Equipo de Gobierno", href: "#" },
       { label: "Plan Estratégico", href: "#" },
@@ -11,8 +13,8 @@ const footerColumns = [
       { label: "Portal de la Investigación", href: "#" },
       { label: "Portal de Transparencia", href: "#" },
       { label: "Campus de Excelencia", href: "#" },
-      { label: "Programa UJA-CEP", href: "#" },
-      { label: "Fundación Universidad de Jaén-Empresa", href: "#" },
+      { label: "Programa FIIS-CEP", href: "#" },
+      { label: "Fundación Facultad de Ingenieria Industrial y de Sistemas - UNI - Empresa", href: "#" },
       { label: "Cita Previa", href: "#" },
     ],
   },
@@ -42,25 +44,25 @@ const footerColumns = [
       { label: "Empleo, Prácticas y Emprendimiento", href: "#" },
       { label: "Reserva de Espacios", href: "#" },
       { label: "Servicios TIC", href: "#" },
-      { label: "UJA App", href: "#" },
+      { label: "FIIS App", href: "#" },
       { label: "Portal de Acceso Abierto", href: "#" },
-      { label: "UJA Editorial", href: "#" },
+      { label: "FIIS Editorial", href: "#" },
     ],
   },
   {
     title: "Comunicación",
-    links: [
+      links: [
       { label: "Comunicación Interna", href: "#" },
-      { label: "Agenda UJA", href: "#" },
+      { label: "Agenda FIIS", href: "#" },
       { label: "Agenda del Rector", href: "#" },
       { label: "Diario Digital", href: "#" },
       { label: "UniRadio Jaén", href: "#" },
-      { label: "UJA TV", href: "#" },
+      { label: "FIIS TV", href: "#" },
       { label: "Galería de Fotos", href: "#" },
       { label: "Divulgación Científica", href: "#" },
       { label: "Identidad Corporativa", href: "#" },
-      { label: "Tienda UJA", href: "#" },
-      { label: "Ventajas UJA", href: "#" },
+      { label: "Tienda FIIS", href: "#" },
+      { label: "Ventajas FIIS", href: "#" },
     ],
   },
 ]
@@ -139,18 +141,17 @@ export function Footer() {
             {/* Logo */}
             <div className="flex items-center gap-2">
               <div className="flex items-end">
-                <span className="text-4xl font-bold tracking-tight text-gray-700">UJa</span>
-                <span className="w-1.5 h-1.5 bg-[#007b3e] mb-1.5 ml-0.5"></span>
+                <Image src={UniLogo} alt="UNI Logo" width={56} height={56} />
               </div>
               <div className="ml-1 flex flex-col text-gray-600 text-xs leading-tight">
-                <span>Universidad</span>
-                <span>de Jaén</span>
+                <span>Facultad de Ingenieria Industrial y de Sistemas</span>
+                <span>- UNI</span>
               </div>
             </div>
 
             {/* Contact Details */}
-            <div className="text-sm text-gray-600 leading-relaxed">
-              <p>Campus Las Lagunillas s/n. 23071 - Jaén</p>
+              <div className="text-sm text-gray-600 leading-relaxed">
+              <p>Av. Tupac Amaru 280, Lima 15333</p>
               <p>
                 Teléfono:{" "}
                 <Link href="tel:+34953212121" className="text-[#007b3e] hover:underline">
@@ -164,8 +165,8 @@ export function Footer() {
                 </Link>
               </p>
               <p>
-                <Link href="mailto:info@ujaen.es" className="text-[#007b3e] hover:underline">
-                  info@ujaen.es
+                <Link href="mailto:acreditacionfiis@uni.edu.pe" className="text-[#007b3e] hover:underline">
+                  acreditacionfiis@uni.edu.pe
                 </Link>
               </p>
             </div>

@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useCallback } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
+import UniLogo from "@/static/UniLogo.png"
 
 interface Slide {
   id: number
@@ -18,7 +20,7 @@ const slides: Slide[] = [
   {
     id: 1,
     title: "ENCUENTROS",
-    subtitle: "UJA",
+    subtitle: "FIIS",
     features: ["FORMACIÓN INTEGRAL | CERCANÍA", "INTERNACIONALIZACIÓN | EMPLEABILIDAD", "INSTALACIONES MODERNAS"],
     date: "Del 12 al 23 de enero de 2026",
     location: "Del 12 al 23 de enero de 2026, en el Campus Las Lagunillas de Jaén",
@@ -28,7 +30,7 @@ const slides: Slide[] = [
   {
     id: 2,
     title: "INVESTIGACIÓN",
-    subtitle: "UJA",
+    subtitle: "FIIS",
     features: ["EXCELENCIA ACADÉMICA | INNOVACIÓN", "TRANSFERENCIA DEL CONOCIMIENTO", "COLABORACIÓN INTERNACIONAL"],
     date: "Curso académico 2025-2026",
     location: "Más de 200 grupos de investigación activos",
@@ -38,7 +40,7 @@ const slides: Slide[] = [
   {
     id: 3,
     title: "CULTURA",
-    subtitle: "UJA",
+    subtitle: "FIIS",
     features: ["ACTIVIDADES CULTURALES | DEPORTES", "ASOCIACIONES ESTUDIANTILES", "VIDA UNIVERSITARIA"],
     date: "Todo el año",
     location: "Disfruta de una experiencia universitaria completa",
@@ -141,14 +143,17 @@ export function HeroSlider() {
                 </div>
               </div>
 
-              {/* UJA Logo and text */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
-                <p className="text-white text-xs mb-1">Universidad de Jaén</p>
-                <div className="text-white text-4xl font-bold">
-                  UJa<span className="text-[#007b3e]">.</span>
+                {/* UNI Logo and text */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10 flex flex-col items-center">
+                  <div className="mb-2">
+                    <Image src={UniLogo} alt="UNI Logo" width={72} height={72} />
+                  </div>
+                  <p className="text-white text-xs mb-1">Facultad de Ingenieria Industrial y de Sistemas - UNI</p>
+                  <div className="text-white text-2xl font-bold">
+                    FIIS
+                  </div>
+                  <p className="text-white text-sm mt-1 border border-white/50 rounded px-2 py-0.5">{slide.badge}</p>
                 </div>
-                <p className="text-white text-sm mt-1 border border-white/50 rounded px-2 py-0.5">{slide.badge}</p>
-              </div>
             </div>
 
             {/* Green bottom part with QR */}

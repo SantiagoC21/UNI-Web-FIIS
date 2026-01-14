@@ -8,8 +8,8 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Universidad de Jaén - UJA",
-  description: "Página web de la Universidad de Jaén",
+  title: "Facultad de Ingenieria Industrial y de Sistemas - UNI",
+  description: "Página web de la Facultad de Ingenieria Industrial y de Sistemas - UNI",
   generator: "v0.app",
   icons: {
     icon: [

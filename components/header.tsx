@@ -9,8 +9,8 @@ import UNILogo from "@/static/UniLogo.png"
 const navItems = [
   { label: "La Universidad", href: "#" },
   { label: "Estudios", href: "#" },
-  { label: "Internacional", href: "#" },
-  { label: "Investigación y Transferencia", href: "#" },
+  { label: "Internacional", href: "https://www.hotcourseslatinoamerica.com/study/rankings/the-world-university.html" },
+  { label: "Investigación y Transferencia", href: "https://www.facebook.com/Instituto.De.Investigacion.FIIS" },
   { label: "Cultura y Deporte", href: "#" },
   { label: "Centros", href: "#" },
 ]
@@ -69,8 +69,7 @@ export function Header() {
               
             </div>
             <div className="ml-2 flex flex-col text-gray-900 text-xl leading-tight">
-              <h4 className="font-bold">Facultad</h4>
-              <h4 className="font-bold">de Ingenieria Industrial, de Sistemas e Informática</h4>
+              <h4 className="font-bold">Facultad de Ingenieria Industrial y de Sistemas - UNI</h4>
             </div>
           </div>
 
@@ -96,12 +95,23 @@ export function Header() {
           <ul className="flex items-center justify-center">
             {navItems.map((item) => (
               <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className="block px-6 py-4 text-white text-sm font-medium hover:bg-[#B32117] transition-colors"
-                >
-                  {item.label}
-                </Link>
+                {item.href.startsWith("http") ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-6 py-4 text-white text-sm font-medium hover:bg-[#B32117] transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="block px-6 py-4 text-white text-sm font-medium hover:bg-[#B32117] transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
