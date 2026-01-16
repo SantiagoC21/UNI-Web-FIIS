@@ -24,7 +24,7 @@ const slides: Slide[] = [
     features: ["FORMACIÓN INTEGRAL | CERCANÍA", "INTERNACIONALIZACIÓN | EMPLEABILIDAD", "INSTALACIONES MODERNAS"],
     date: "Del 12 al 23 de enero de 2026",
     location: "Del 12 al 23 de enero de 2026, en el Campus Las Lagunillas de Jaén",
-    image: "/university-student-campus-modern-building.jpg",
+    image: "/slide1.jpg",
     badge: "Estudiantes",
   },
   {
@@ -34,7 +34,7 @@ const slides: Slide[] = [
     features: ["EXCELENCIA ACADÉMICA | INNOVACIÓN", "TRANSFERENCIA DEL CONOCIMIENTO", "COLABORACIÓN INTERNACIONAL"],
     date: "Curso académico 2025-2026",
     location: "Más de 200 grupos de investigación activos",
-    image: "/university-research-laboratory-science.jpg",
+    image: "/slide2.jpg",
     badge: "Investigación",
   },
   {
@@ -44,7 +44,7 @@ const slides: Slide[] = [
     features: ["ACTIVIDADES CULTURALES | DEPORTES", "ASOCIACIONES ESTUDIANTILES", "VIDA UNIVERSITARIA"],
     date: "Todo el año",
     location: "Disfruta de una experiencia universitaria completa",
-    image: "/university-campus-students-activities-events.jpg",
+    image: "/slide4.jpg",
     badge: "Campus",
   },
 ]

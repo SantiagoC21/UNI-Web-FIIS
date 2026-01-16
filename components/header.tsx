@@ -12,9 +12,9 @@ const navItems = [
   { label: "Nacional", href: "https://www.sunedu.gob.pe/universidades-publicas/" },
   { label: "Internacional", href: "https://www.hotcourseslatinoamerica.com/study/rankings/the-world-university.html" },
   { label: "Investigación y Transferencia", href: "https://www.facebook.com/Instituto.De.Investigacion.FIIS" },
-  { label: "Postgrado", href: "#" },
-  { label: "Computo", href: "#" },
-  { label: "Proyeccion Social", href: "#" },
+  { label: "Postgrado", href: "https://www.facebook.com/posgrado.f.uni/?locale=es_LA" },
+  { label: "Computo", href: "https://www.sistemasuni.edu.pe/" },
+  { label: "Proyeccion Social", href: "https://www.facebook.com/opsec.fiisuni/?locale=es_LA" },
 ]
 
 export function Header() {
@@ -51,12 +51,14 @@ export function Header() {
             <Link href="#" className="text-sm text-gray-700 hover:text-gray-900">
               Sede Electrónica
             </Link>
-            <Link
-              href="#"
+            <a
+              href="https://univirtual.uni.pe/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#DECA87] text-white px-4 py-2 text-sm font-semibold hover:bg-[#e6d9aa] transition-colors"
             >
               INTRANET
-            </Link>
+            </a>
           </div>
         </div>
       </div>
