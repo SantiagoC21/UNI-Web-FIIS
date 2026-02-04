@@ -1,13 +1,48 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { ChevronDown, Volume2 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import UNILogo from "@/static/UniLogo.png"
 
-const navItems = [
+interface NavItem {
+  label: string;
+  href?: string;
+  children?: NavItem[];
+}
+
+const navItems: NavItem[] = [
   { label: "FIIS", href: "/descripcion" },
+  {
+    label: "Escuelas",
+    children: [
+      {
+        label: "Escuela de Ing. Industrial",
+        href: "#",
+        children: [
+          { label: "Alumnos", href: "/alumnos?escuela=industrial" },
+          { label: "Docentes", href: "/docentes?escuela=industrial" },
+        ],
+      },
+      {
+        label: "Escuela de Ing. de Sistemas",
+        href: "#",
+        children: [
+          { label: "Alumnos", href: "/alumnos?escuela=sistemas" },
+          { label: "Docentes", href: "/docentes?escuela=sistemas" },
+        ],
+      },
+      {
+        label: "Escuela de Ing. de Software",
+        href: "#",
+        children: [
+          { label: "Alumnos", href: "/alumnos?escuela=software" },
+          { label: "Docentes", href: "/docentes?escuela=software" },
+        ],
+      },
+    ],
+  },
   { label: "Areas", href: "/areas" },
   { label: "Nacional", href: "https://www.sunedu.gob.pe/universidades-publicas/" },
   { label: "Internacional", href: "https://www.hotcourseslatinoamerica.com/study/rankings/the-world-university.html" },
@@ -16,6 +51,90 @@ const navItems = [
   { label: "Computo", href: "https://www.sistemasuni.edu.pe/" },
   { label: "Proyeccion Social", href: "https://www.facebook.com/opsec.fiisuni/?locale=es_LA" },
 ]
+
+function Submenu({ item }: { item: NavItem }) {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <li
+      className="relative"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <Link
+        href={item.href || "#"}
+        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+      >
+        {item.label}
+      </Link>
+      {isOpen && (
+        <ul className="absolute left-full top-0 mt-0 w-max bg-white shadow-lg">
+          {item.children?.map((child) => (
+            <li key={child.label}>
+              <Link
+                href={child.href || "#"}
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              >
+                {child.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
+  )
+}
+
+function Dropdown({ item }: { item: NavItem }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLLIElement>(null)
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen)
+  }
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [dropdownRef])
+
+  return (
+    <li className="relative" ref={dropdownRef}>
+      <button
+        onClick={handleToggle}
+        className="block px-6 py-4 text-white text-sm font-medium hover:bg-[#B32117] transition-colors"
+      >
+        {item.label}
+      </button>
+      {isOpen && (
+        <ul className="absolute left-0 mt-0 w-max bg-white shadow-lg z-10">
+          {item.children?.map((child) =>
+            child.children ? (
+              <Submenu key={child.label} item={child} />
+            ) : (
+              <li key={child.label}>
+                <Link
+                  href={child.href || "#"}
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >
+                  {child.label}
+                </Link>
+              </li>
+            )
+          )}
+        </ul>
+      )}
+    </li>
+  )
+}
 
 export function Header() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -99,25 +218,29 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4">
           <ul className="flex items-center justify-center">
             {navItems.map((item) => (
-              <li key={item.label}>
-                {item.href.startsWith("http") ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-6 py-4 text-white text-sm font-medium hover:bg-[#B32117] transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="block px-6 py-4 text-white text-sm font-medium hover:bg-[#B32117] transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                )}
-              </li>
+              item.children ? (
+                <Dropdown key={item.label} item={item} />
+              ) : (
+                <li key={item.label}>
+                  {item.href && item.href.startsWith("http") ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block px-6 py-4 text-white text-sm font-medium hover:bg-[#B32117] transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href || "#"}
+                      className="block px-6 py-4 text-white text-sm font-medium hover:bg-[#B32117] transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </li>
+              )
             ))}
           </ul>
         </div>

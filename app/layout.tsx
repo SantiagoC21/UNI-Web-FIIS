@@ -1,21 +1,34 @@
-import type React from "react"
+import React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Roboto, Roboto_Condensed } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] });
+const robotoCondensed = Roboto_Condensed({ subsets: ["latin"], weight: ["700"] });
 
 export const metadata: Metadata = {
-  title: "Facultad de Ingenieria Industrial y de Sistemas - UNI",
-  description: "Página web de la Facultad de Ingenieria Industrial y de Sistemas - UNI",
-  generator: "v0.app",
+  title: 'FIIS - UNI | Facultad de Ingeniería Industrial, de Sistemas y de Software',
+  description: 'Universidad Nacional de Ingeniería - Facultad de Ingeniería Industrial, de Sistemas y de Software',
+  generator: 'v0.app',
   icons: {
-    icon: "/UniLogo.png",
-    apple: "/UniLogo.png",
+    icon: [
+      {
+        url: '/icon-light-32x32.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/icon-dark-32x32.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
+        url: '/icon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+    apple: '/apple-icon.png',
   },
 }
 
@@ -25,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body className={`font-sans antialiased`}>
         <div className="min-h-screen flex flex-col">
           <Header />
