@@ -1,13 +1,12 @@
 import React from "react"
 import type { Metadata } from "next"
-import { Roboto, Roboto_Condensed } from "next/font/google"
+import { Poppins } from 'next/font/google'
 import { Analytics } from "@vercel/analytics/next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import "./globals.css"
 
-const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] });
-const robotoCondensed = Roboto_Condensed({ subsets: ["latin"], weight: ["700"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata: Metadata = {
   title: 'FIIS - UNI | Facultad de Ingeniería Industrial, de Sistemas y de Software',
@@ -39,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`font-sans antialiased`}>
+      <body className={`font-sans antialiased ${poppins.className}`}>
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1 bg-white">

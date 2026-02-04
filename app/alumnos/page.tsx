@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Header } from "@/components/header";
 import { alumnos } from "@/lib/data";
 import { ArrowLeft, User, Search, GraduationCap } from "lucide-react";
 import Link from "next/link";
@@ -25,8 +24,6 @@ export default function AlumnosPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-
       <main className="py-8 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Breadcrumb */}
@@ -231,15 +228,6 @@ export default function AlumnosPage() {
           )}
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-[#1a1a2e] text-white py-6 px-8 mt-8">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-sm text-gray-400">
-            © 2026 Universidad Nacional de Ingeniería - FIIS
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }
