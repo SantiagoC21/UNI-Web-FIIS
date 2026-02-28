@@ -9,10 +9,8 @@ const footerColumns = [
     links: [
       { label: "Equipo de Gobierno", href: "#" },
       { label: "Plan Estratégico", href: "#" },
-      { label: "Universidad Responsable", href: "#" },
       { label: "Portal de la Investigación", href: "#" },
       { label: "Portal de Transparencia", href: "#" },
-      { label: "Campus de Excelencia", href: "#" },
       { label: "Programa FIIS-CEP", href: "#" },
       { label: "Fundación Facultad de Ingenieria Industrial y de Sistemas - UNI - Empresa", href: "#" },
       { label: "Cita Previa", href: "#" },
@@ -21,16 +19,11 @@ const footerColumns = [
   {
     title: "Vida en los Campus",
     links: [
-      { label: "Los Campus", href: "#" },
       { label: "Deporte", href: "#" },
       { label: "Cultura", href: "#" },
       { label: "Biblioteca", href: "#" },
       { label: "Defensor Universitario", href: "#" },
-      { label: "Colegio Mayor", href: "#" },
       { label: "Asociaciones de Estudiantes", href: "#" },
-      { label: "Gabinete de Psicología", href: "#" },
-      { label: "Unidad de Igualdad", href: "#" },
-      { label: "Comedores Universitarios", href: "#" },
     ],
   },
   {
@@ -40,13 +33,10 @@ const footerColumns = [
       { label: "Gestión Académica Virtual", href: "#" },
       { label: "Servicios Administrativos", href: "#" },
       { label: "Trámites / Administración Electrónica", href: "#" },
-      { label: "Tablón Digital", href: "#" },
       { label: "Empleo, Prácticas y Emprendimiento", href: "#" },
-      { label: "Reserva de Espacios", href: "#" },
       { label: "Servicios TIC", href: "#" },
       { label: "FIIS App", href: "#" },
       { label: "Portal de Acceso Abierto", href: "#" },
-      { label: "FIIS Editorial", href: "#" },
     ],
   },
   {
@@ -60,9 +50,7 @@ const footerColumns = [
       { label: "FIIS TV", href: "#" },
       { label: "Galería de Fotos", href: "#" },
       { label: "Divulgación Científica", href: "#" },
-      { label: "Identidad Corporativa", href: "#" },
       { label: "Tienda FIIS", href: "#" },
-      { label: "Ventajas FIIS", href: "#" },
     ],
   },
 ]
